@@ -13,7 +13,7 @@ my @sams = &getSam;
 sub main {
         foreach my $file (@_) {
         	my @read_dbs;
-        	open FILE, "$file";
+        	open FILE, "$sam_path/$file" or die "cannot open $file for reading \n";
         	while (<FILE>) {
         		chomp;
         		my @split_list = split(' ', $_);
